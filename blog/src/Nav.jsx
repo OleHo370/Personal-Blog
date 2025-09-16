@@ -14,10 +14,13 @@ export default function Nav() {
     <nav className="nav">
       <div className="topmenu">
         <a href="/" className="homelogo">
-          <i className="bi bi-house-fill"></i> Olé Ho
+        <div className="homelogobox">
+          <i className="bi bi-house-fill"></i>
+          <span>Olé Ho</span>
+        </div>
         </a>
 
-        <ul className={"tablist" + (active ? "active" : "")}>
+        <ul className={"tablist" + (active ? " active" : "")}>
           <li className="tab">
             <a href="/" className="tablink">My Projects</a>
           </li>
@@ -29,7 +32,7 @@ export default function Nav() {
           </li>
         </ul>
 
-        <i className={`bi ${active ? 'bi-x-square' : 'bi-list'} hamburgerlist`} onClick={toggleMenu}></i>
+        <i className={"bi" + (active ? " bi-x-square" : " bi-list") + " hamburgerlist"} onClick={toggleMenu}></i>
       </div>
     </nav>
   );
