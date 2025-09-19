@@ -9,6 +9,15 @@ export default function Nav() {
     setActive(!active);
   };
   
+  function goToProjects(e) {
+    e.preventDefault();
+    const proSec = document.getElementById('prosec');
+    proSec.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+    setActive(false);
+  }
 
   return (
     <nav className="nav">
@@ -22,7 +31,7 @@ export default function Nav() {
 
         <ul className={"tablist" + (active ? " active" : "")}>
           <li className="tab">
-            <a href="/" className="tablink">My Projects</a>
+            <a href="#prosec" className="tablink" onClick={goToProjects}>My Projects</a>
           </li>
           <li className="tab">
             <a href="/aboutme.html" className="tablink">About Me</a>
