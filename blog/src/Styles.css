@@ -153,7 +153,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 30px;
+    padding-top: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 15px;
     text-align: center;
 }
 .welcomesectionbox {
@@ -192,11 +195,11 @@ body {
 
 .projectsection {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 50px 30px;
+    padding: 15px 30px;
+    scroll-margin-top: 100px;
 }
 
 .projectsectionbox {
@@ -230,12 +233,18 @@ body {
 }
 
 .projectbox {
+    display: flex;
     background: linear-gradient(to right, #ffffff 40%, #fca311);
     border-radius: 15px;
     padding: 25px;
     border: 5px solid #fca311;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: left;
+    gap: 20px;
+}
+.projectbox p {
+    font-size: 20px;
+    color:#14213D;
 }
 
 .projectbox:hover {
@@ -243,9 +252,14 @@ body {
     box-shadow: 0 4px 10px #5f5f5f;
     cursor: pointer;
 }
+.projecttext {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
 
 .projectbox h3 {
-    font-size: 30px;
+    font-size: 35px;
     color: #14213D;
     margin-bottom: 15px;
     font-weight: bold;
@@ -264,11 +278,23 @@ body {
     color: #ffffff;
     padding: 5px 12px;
     border-radius: 15px;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
 }
 
+.projectimage {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid #14213D;
+}
 
+.projectimage img {
+    width: 100%;
+    height: 100%;
+}
 
 @media screen and (max-width: 960px){
     .hamburgerlist {
@@ -316,6 +342,34 @@ body {
     
     .projectbox {
         padding: 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(#ffffff 40%, #fca311);
+    }
+    .projecttext {
+        width: 100%;
+        align-items: center;
+    }
+    .skillslist {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .projectbox p {
+        font-size: 15px;
+    }
+    .projectbox h3 {
+        font-size: 28px;
+    }
+
+    .skill {
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .projectimage {
+        width: 200px;
+        height: 200px;
     }
 
 
