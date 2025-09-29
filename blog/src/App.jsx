@@ -3,6 +3,7 @@ import './styles.css';
 import prescriptionSampleImg from './assets/images/prescriptionsample.png';
 import drivingSampleImg from './assets/images/drivingsample.png';
 import drumSampleImg from './assets/images/drumsample.png';
+import aboutMeSampleImg from './assets/images/aboutmesample.png';
 
 export default function App() {
 
@@ -10,13 +11,14 @@ export default function App() {
     <>
       <Nav />
       <div className="homepage">
+
         <div className="welcomesection">
           <div className="welcomesectionbox">
             <h1>Welcome to <span className = "highlight">Olé's Blog!</span></h1>
             <p className="welcomedesc">This is my personal archive of cool projects, such as websites, apps, and robots, that I have built throughout the past years.</p>
           </div>
         </div>
-
+      
         <div className="projectsection" id="prosec">
           <div className="projectsectionbox">
             <h2> My <span className = "highlight">Projects</span></h2>
@@ -83,14 +85,29 @@ export default function App() {
                 <div className="projectimage">
                   <img src={drumSampleImg}/>
                 </div>
-                
-                
               </div>
-
 
             </div>
           </div>
         </div>
+
+        <div className="aboutsection" id="aboutsec">
+          <div className="aboutsectionbox">
+            <h2>About <span className="highlight">Me</span></h2>
+            
+            <div className="aboutcontent">
+
+              <div className="aboutphoto">
+                <img src={aboutMeSampleImg}/>
+              </div>
+
+              <div className="abouttext">
+                <p>placeholder text, will fill in later</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </>
   );

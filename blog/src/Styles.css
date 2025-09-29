@@ -40,6 +40,7 @@ body {
     height: 100%;
     white-space: nowrap;
     font-size: 25px;
+    transition: all 0.5s ease;
 }
 
 .homelogo {
@@ -121,11 +122,11 @@ body {
     background: #f44c3d;
     color: #ffffff;
     font-size: 25px;
+    transition: all 0.5s ease;
 }
 
 .homelogo:hover {
     transform: scale(1.10);
-    transition: all 0.5s ease;
 }
 
 .button:hover {
@@ -137,7 +138,6 @@ body {
 .tablink:hover {
     color: #f44c3d;
     font-size: 30px;
-    transition: all 0.5s ease;
 }
 
 .hamburgerlist {
@@ -296,6 +296,71 @@ body {
     height: 100%;
 }
 
+.aboutsection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px 30px 50px 30px;
+  scroll-margin-top: 100px;
+}
+
+.aboutsectionbox {
+  height: auto;
+  width: 80%;
+  max-width: 1200px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 5px solid #14213D;
+  margin: 20px auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.aboutsection h2 {
+  width: 100%;
+  font-size: 60px;
+  color: #14213D;
+  font-weight: bold;
+  margin-top: 30px;
+  padding: 0 30px;
+  padding-bottom: 30px;
+  border-bottom: 5px solid #14213D;
+}
+
+.aboutcontent {
+  display: flex;
+  gap: 30px;
+  margin: 30px;
+  align-items: center;
+}
+
+.aboutphoto {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 5px solid #fca311;
+}
+
+.aboutphoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.abouttext {
+  flex: 1;
+  text-align: left;
+}
+
+.abouttext p {
+  font-size: 20px;
+  color: #14213D;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
 @media screen and (max-width: 960px){
     .hamburgerlist {
         display: flex;
@@ -370,6 +435,29 @@ body {
     .projectimage {
         width: 200px;
         height: 200px;
+    }
+
+    .aboutsection h2 {
+        font-size: 45px;
+    }
+
+    .aboutcontent {
+        flex-direction: column;
+        margin: 20px;
+        text-align: center;
+    }
+
+    .aboutphoto {
+        width: 250px;
+        height: 250px;
+    }
+
+    .abouttext {
+        text-align: center;
+    }
+
+    .abouttext p {
+        font-size: 16px;
     }
 
 
