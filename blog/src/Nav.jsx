@@ -1,50 +1,73 @@
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Nav() {
   const stateArr = useState(false);
   const active = stateArr[0];
   const setActive = stateArr[1];
+  const navigate = useNavigate();
+  const location = useLocation();
 
   function toggleMenu() {
     setActive(!active);
-  };
+  }
 
   function goToHome(e) {
     e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
+    setActive(false);
+    
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
   }
-  
+
   function goToProjects(e) {
     e.preventDefault();
-    const proSec = document.getElementById('prosec');
-    proSec.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
     setActive(false);
+    
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: 'prosec' } });
+    } else {
+      const proSec = document.getElementById('prosec');
+      if (proSec) {
+        proSec.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
   }
 
   function goToAbout(e) {
     e.preventDefault();
-    const aboutSec = document.getElementById('aboutsec');
-    aboutSec.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
     setActive(false);
+    
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: 'aboutsec' } });
+    } else {
+      const aboutSec = document.getElementById('aboutsec');
+      if (aboutSec) {
+        aboutSec.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
   }
 
   return (
     <nav className="nav">
       <div className="topmenu">
         <a href="/" className="homelogo" onClick={goToHome}>
-        <div className="homelogobox">
-          <i className="bi bi-house-fill"></i>
-          <span>Olé Ho</span>
-        </div>
+          <div className="homelogobox">
+            <i className="bi bi-house-fill"></i>
+            <span>Olé Ho</span>
+          </div>
         </a>
 
         <ul className={"tablist" + (active ? " active" : "")}>
