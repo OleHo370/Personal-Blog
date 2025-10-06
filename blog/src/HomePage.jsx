@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import BlockyGradient from './BlockyGradient';
+import { AnimatedSection } from './AnimatedSection';
+
 import prescriptionSampleImg from './assets/images/prescriptionsample.png';
+import oleBlogSampleImg from './assets/images/oleblogsample.png';
 import drivingSampleImg from './assets/images/drivingsample.png';
 import drumSampleImg from './assets/images/drumsample.png';
 import aboutMeSampleImg from './assets/images/aboutmesample.png';
-
 export default function HomePage() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -33,21 +35,21 @@ export default function HomePage() {
 
   return (
     <div className="homepage">
-      <div className="welcomesection">
+      <AnimatedSection className="welcomesection">
         <div className="welcomesectionbox">
           <h1>Welcome to <span className="highlight">Olé's Blog!</span></h1>
           <p className="welcomedesc">This is my personal archive of cool projects, such as websites, apps, and robots, that I have built throughout the past years.</p>
         </div>
-      </div>
+      </AnimatedSection>
   
-      <div className="projectsection" id="prosec">
+      <AnimatedSection className="projectsection" id="prosec" delay={0.2}>
         <div className="projectsectionbox">
           <div className="foldertab">
             <h2> My <span className="highlight">Projects</span></h2>
           </div>
           <div className="foldercontent">
             <div className="projectlist">
-              <div className="projectbox" onClick={handlePrescriptionClick}>
+              <AnimatedSection className="projectbox" onClick={handlePrescriptionClick} delay={0.2}>
                 <BlockyGradient />
                 <div className="projecttext">
                   <h3>Prescription Manager App</h3>
@@ -64,9 +66,9 @@ export default function HomePage() {
                 <div className="projectimage">
                   <img src={prescriptionSampleImg}/>
                 </div>
-              </div>
+              </AnimatedSection>
 
-              <div className="projectbox">
+              <AnimatedSection className="projectbox" delay={0.2}>
                 <BlockyGradient />
                 <div className="projecttext">
                   <h3>Olé's Blog</h3>
@@ -78,9 +80,12 @@ export default function HomePage() {
                     <span className="skill">HTML</span>
                   </div>
                 </div>
-              </div>
+                <div className="projectimage">
+                  <img src={oleBlogSampleImg}/>
+                </div>
+              </AnimatedSection>
 
-              <div className="projectbox">
+              <AnimatedSection className="projectbox" delay={0.2}>
                 <BlockyGradient />
                 <div className="projecttext">
                   <h3>Maze-Navigating Robot Car</h3>
@@ -94,9 +99,9 @@ export default function HomePage() {
                 <div className="projectimage">
                   <img src={drivingSampleImg}/>
                 </div>
-              </div>
+              </AnimatedSection>
 
-              <div className="projectbox">
+              <AnimatedSection className="projectbox" delay={0.2}>
                 <BlockyGradient />
                 <div className="projecttext">
                   <h3>Drum-Playing Robot</h3>
@@ -110,13 +115,13 @@ export default function HomePage() {
                 <div className="projectimage">
                   <img src={drumSampleImg}/>
                 </div>
-              </div>
+              </AnimatedSection>
             </div>
           </div>
         </div>
-      </div>
+      </AnimatedSection>
 
-      <div className="aboutsection" id="aboutsec">
+      <AnimatedSection className="aboutsection" id="aboutsec" delay={0.2}>
         <div className="aboutsectionbox">
           <div className="foldertab">
             <h2>About <span className="highlight">Me</span></h2>
@@ -134,7 +139,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </div>
+      </AnimatedSection>
     </div>
   );
 }
