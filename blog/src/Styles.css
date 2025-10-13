@@ -140,49 +140,54 @@ body {
 }
 
 .welcomesection {
+    width: 100%;
+    min-height: 600px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 50px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 15px;
-    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    padding: 0;
+    margin-bottom: 50px;
 }
+
+.welcomesection::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(20, 33, 61, 0.55), rgba(20, 33, 61, 0.55));
+    z-index: 1;
+}
+
+
 .welcomesectionbox {
-    height: auto;
-    width: 80%;
-    max-width: 1200px;
-    background: #ffffff;
-    border-radius: 20px;
-    margin: 20px auto;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    border: 5px solid #14213D;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 60px 50px;
 }
 
 .welcomesection h1 {
-    width: 100%;
     font-size: 60px;
-    color: #14213D;
+    color: #ffffff;
     font-weight: bold;
-    margin-top: 30px;
-    padding: 0 30px;
-    padding-bottom: 30px;
-    border-bottom: 5px solid #14213D;
-
+    margin-bottom: 30px;
 }
+
 .highlight {
     /*color: #fb8500*/
     color: #fb8500
 }
+
 .welcomedesc {
     font-size: 25px;
-    justify-content: center;
-    align-items: center;
-    margin: 30px 30px;
-    color:#14213D;
-    
+    color: #ffffff;
+    line-height: 1.6;
 }
 
 .projectsection {
@@ -264,6 +269,7 @@ body {
 .projectbox {
     display: flex;
     position: relative;
+    align-items: center;
     /*background: linear-gradient(to right, #ffffff 40%, #fca311);*/
     background: transparent;
     border-radius: 15px;
@@ -274,9 +280,17 @@ body {
     gap: 20px;
     overflow: hidden;
 }
+
 .projectbox p {
-    font-size: 20px;
-    color:#14213D;
+    font-size: 18px;
+    color: #14213D;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding: 15px;
+    /*background: rgba(255, 255, 255, 0.6);*/
+    border-radius: 10px;
+    border-left: 4px solid #fb8500;
+    max-width: 80%;
 }
 
 .projectbox:hover {
@@ -295,7 +309,6 @@ body {
 .projectbox h3 {
     font-size: 35px;
     color: #14213D;
-    margin-bottom: 15px;
     font-weight: bold;
 }
 
@@ -344,9 +357,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  text-align: center;
+  text-align: left;
   padding: 15px 30px 50px 30px;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 }
 
 .aboutsectionbox {
@@ -380,19 +393,29 @@ body {
   */
 
 .aboutcontent {
-  display: flex;
-  gap: 30px;
+  display: block;
   margin: 30px;
-  align-items: center;
+  background: #ffffff;
+  border-radius: 30px;
+  border: 5px solid #219EBC;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
+
 .aboutphoto {
-  flex-shrink: 0;
+  float: right;
   width: 300px;
   height: 300px;
   border-radius: 15px;
   overflow: hidden;
-  border: 5px solid #fca311;
+  border: 5px solid #fb8500;
+  margin-left: 30px;
+  margin-top: 70px;
+  position: relative;
+  z-index: 1;
 }
 
 .aboutphoto img {
@@ -402,16 +425,20 @@ body {
 }
 
 .abouttext {
-  flex: 1;
-  text-align: left;
-}
-
-.abouttext p {
   font-size: 20px;
   color: #14213D;
   line-height: 1.8;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
+.abouttext p {
+    border-radius: 10px;
+    padding-left: 20px;
+    border-left: 4px solid #fb8500;
+}
+
+
 
 @media screen and (max-width: 960px){
 
@@ -447,6 +474,26 @@ body {
     }
     .homepage p {
         font-size: 16px;
+    }
+
+    .welcomesection {
+        min-height: 500px;
+        padding: 20px;
+    }
+
+    .welcomesectionbox {
+        width: 95%;
+        padding: 40px 30px;
+    }
+
+    .welcomesection h1 {
+        font-size: 40px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .welcomedesc {
+        font-size: 18px;
     }
 
     .foldertab {
@@ -495,6 +542,9 @@ body {
     }
     .projectbox p {
         font-size: 15px;
+        border-left: none;
+        border-top: 4px solid #fb8500;
+        max-width: 100%;
     }
     .projectbox h3 {
         font-size: 28px;
@@ -516,22 +566,33 @@ body {
         */
 
     .aboutcontent {
+        display: flex;
         flex-direction: column;
         margin: 20px;
         text-align: center;
+        padding: 20px;
     }
 
     .aboutphoto {
         width: 250px;
         height: 250px;
+        order: -1;
+        margin: 0 auto 20px auto;
     }
 
     .abouttext {
         text-align: center;
+        font-size: 16px;
     }
 
     .abouttext p {
         font-size: 16px;
+        border-left: none;
+        border-top: 4px solid #fb8500;
+        padding: 15px;
+        padding-left: 15px;
+        margin: 0 auto;
+        max-width: 100%;
     }
 
     

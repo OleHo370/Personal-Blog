@@ -46,8 +46,8 @@ export default function BlockyGradient() {
     const initBlocks = [];
     
     if (isVertical) {
-      const transitionStart = rows * 0.3;
-      const transitionEnd = rows * 0.7;
+      const transitionStart = rows * 0.5;
+      const transitionEnd = rows * 0.9;
       
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {
@@ -73,8 +73,8 @@ export default function BlockyGradient() {
       }
     } 
     else {
-      const transitionStart = cols * 0.3;
-      const transitionEnd = cols * 0.7;
+      const transitionStart = cols * 0.5;
+      const transitionEnd = cols * 0.9;
       
       for (let row = 0; row < rows; row++) {
         for (let col = 0; col < cols; col++) {

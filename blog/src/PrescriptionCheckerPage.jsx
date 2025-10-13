@@ -1,4 +1,4 @@
-import './PrescriptionChecker.css';
+import './ProjectPage.css';
 import { useEffect } from 'react';
 import hcFigmaImg from './assets/images/hcfigma.png';
 import firstPageImg from './assets/images/firstpage.png';
@@ -19,6 +19,7 @@ import phoneAppImg from './assets/images/phoneapp.png';
 import watchHomeImg from './assets/images/watchhome.png';
 import watchListImg from './assets/images/watchlist.png';
 import watchList2Img from './assets/images/watchlist2.png';
+import { AnimatedSection } from './AnimatedSection';
 
 export default function PrescriptionCheckerPage() {
   useEffect(function scrollToTop() {
@@ -26,31 +27,64 @@ export default function PrescriptionCheckerPage() {
   }, []);
 
   return (
-    <div className="hc-page">
-      <div className="hcmainbox">
+    <div className="hcpage">
+      <AnimatedSection className="hcmainbox" delay={0.2}>
         <h1>Prescription Manager App</h1>
 
-        <div className="hccontentbox">
-          <p>To-Do: Add a summary</p>
-        </div>
+        <AnimatedSection className="hccontentbox" delay={0.2}>
+          <h2>Project Summary</h2>
+          <p>I developed a multi-platform healthcare management application that bridges the communication gap between heart patients and their doctors.</p>
+          
+          <h3>Frontend Development</h3>
+          <ul>
+            <li>Built responsive web interfaces using JavaScript, HTML, CSS, and Bootstrap featuring:
+              <ul>
+                <li>Doctor portal for managing multiple patients and creating detailed prescription schedules</li>
+                <li>Patient portal with dynamic medication/exercise tracking and automated reminders</li>
+                <li>Complex scheduling system supporting multi-dimensional data (7 days × multiple daily doses)</li>
+              </ul>
+            </li>
+            <li>Developed native iOS applications using Swift:
+              <ul>
+                <li>iPhone app with scrollable UI optimized for mobile constraints and WebKit integration</li>
+                <li>Apple Watch app with simplified interface, swipeable daily views, and calendar-based notifications</li>
+              </ul>
+            </li>
+          </ul>
 
-        <div className="hccontentbox">
+          <h3>Backend and Multi-Platform Integration</h3>
+          <ul>
+            <li>Implemented serverless backend architecture with AWS Lambda and API Gateway</li>
+            <li>Integrated AWS Cognito for secure user authentication with email verification</li>
+            <li>Designed role-based access control distinguishing doctor and patient accounts</li>
+            <li>Created cross-platform data synchronization:
+              <ul>
+                <li>Web app fetches patient data from REST API endpoints</li>
+                <li>WebKit message handler bridges JSON data from web to iPhone app</li>
+                <li>WatchConnectivity framework syncs prescription data between iPhone and Apple Watch</li>
+                <li>Local notification system on watchOS triggers medication/exercise reminders based on schedule data</li>
+              </ul>
+            </li>
+          </ul>
+        </AnimatedSection>
+
+        <AnimatedSection className="hccontentbox" delay={0.2}>
           <h2>Step 0: Motivation</h2>
           <p>My grandfather has battled with heart disease for almost half of his life; even though he seemed healthy the majority of the time and didn't show any surface symptoms for multiple years, on one especially hot summer day, he suddenly suffered a major heart attack. Luckily, he was rushed to the hospital immediately and is now fully recovered.</p>
           <p>However, this incident has left me with a simple question that I have carried throughout my life: could this type of accident have been avoided and prevented earlier, had we known more about their health at that time? </p>
           <p>I have taken that question with me to this day, where I have decided to take it upon myself to see if I can create an invention that facilitates the health journey of heart patients, hopefully deterring and detecting potential future accidents before they occur.</p>
-        </div>
+        </AnimatedSection>
 
-        <div className="hccontentbox">
+        <AnimatedSection className="hccontentbox" delay={0.2}>
           <h2>Step 1: Empathizing With A Target Audience</h2>
           <p>To tackle the daunting task of addressing the issue of heart attacks within the vast topic of "helping with heart attacks," I conducted extensive research into the specific pain points of patients and existing technology.</p>
           <p>I promptly set up an interview with my grandfather to gain some firsthand insights into what heart patients struggle with the most. As a result, I identified and narrowed down a niche within heart attack assistance to a feasible scope that I believed I could tackle.</p>
           <p>For example, I learned that checkups occur infrequently, around once every six months, meaning that any progression or worsening of the condition may not be detected or treated for an extended period. Additionally, the prescriptions that are given for things such as taking pills and doing exercise are often lengthy and frequent, so trying to keep track of every aspect continuously can be quite challenging.</p>
           <p>This foundation allowed me to set a direction for my project and identify the necessary research to refine my idea. As a result, my problem statement became:</p>
           <p><em>Patients with diagnosed heart disease often suffer from a lack of guidance and monitoring of their health throughout their daily journey of maintaining a fit lifestyle, therefore leading to unexpected heart attacks and deterioration of health over time.</em></p>
-        </div>
+        </AnimatedSection>
 
-        <div className="hccontentbox">
+        <AnimatedSection className="hccontentbox" delay={0.2}>
           <h2>Step 2: Pinpointing A Holistic Idea</h2>
           <p>During this phase of brainstorming, researching, and refining, I formulated a definition statement that highlighted the main goal that my project hopes to achieve:</p>
           <p><em>How might we design an application to create a central hub of communication between a heart patient and their doctor, constantly tracking and monitoring daily routines and health information to ensure a healthy lifestyle that avoids risks such as heart attacks?</em></p>
@@ -104,9 +138,9 @@ export default function PrescriptionCheckerPage() {
               </ul>
             </li>
           </ol>
-        </div>
+        </AnimatedSection>
 
-        <div className="hccontentbox">
+        <AnimatedSection className="hccontentbox" delay={0.2}>
             <h2>Step 3: Prototyping</h2>
             <p>During this phase, I first used Figma to plan out the app. This project required some detailed planning and organization, which means that setting up each page of my app will be crucial to understanding what needs to be prioritized and coded. I used this tool as my very first brainstorming phase, designing a basic UI and implementing a few features that should be mapped out.</p>
 
@@ -218,16 +252,16 @@ export default function PrescriptionCheckerPage() {
 
           <p>There are a few additional features, including notifications and checkboxes. The notifications will be a message that pops up whenever a medication needs to be taken or an exercise needs to be done. I learned how to utilize real-life times in the watch so that I can accurately code it to give notifications at the correct time.</p>
           <p>The checkboxes are also crucial because whenever they are ticked off, that task will disappear, and the database will be notified that the task has been completed for the day.</p>
-        </div>
+        </AnimatedSection>
 
-        <div className="hccontentbox">
-          <h2>Part #6: Conclusion, Reflection, & Future Steps</h2>
+        <AnimatedSection className="hccontentbox" delay={0.2}>
+          <h2>Part #6: Conclusion, Reflection, and Future Steps</h2>
           <p>I have certainly learned a lot about not only coding but also about the importance of the design process and how I work and manage time. During the decision-making period, when I decided to actually delve deep into learning several new coding languages that I had never interacted with before, instead of just planning on Figma, it was incredibly daunting.</p>
           <p>At first, I thought that I would not even get close to even a prototype, much less a multi-platform app that can interact with each other and update on its own. I realized that time management was the most crucial part of achieving success during that time, so I forced myself to allocate at least 1-2 hours every day to research and chip away at this vast project, starting from spring break.</p>
           <p>Sometimes, even the most minute details like creating a checkbox took up to 3 hours just to debug, because even though on the surface it may not seem like much, internally, dozens of lines of code are written to instantiate the UI, connect response functionality to the button, create a response UI of it being "checked off", send signals to the internal database that the task has been completed, and then to finally hide that block from the display and shift every other block back into place. Processes like these have taught me the valuable lessons of methodical thinking and patience, as it is only when I take the time to thoroughly understand the problem and take action to fix it that the app will be truly fixed in the long term.</p>
           <p>As shown in this post, I am still actively working on specific areas, such as the patient list on the doctor's side. I want to continue developing this passion project throughout the summer and into the following year, so that it may eventually become an app used by doctors and hospitals to facilitate patients' transition to a healthier lifestyle. </p>
-        </div>
-      </div>
+        </AnimatedSection>
+      </AnimatedSection>
     </div>
   );
 }
