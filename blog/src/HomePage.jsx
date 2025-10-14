@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import BlockyGradient from './BlockyGradient';
 import { AnimatedSection } from './AnimatedSection';
+import ContactForm from './ContactForm';
 
 import welcomeSectionBgImg from './assets/images/welcomesectionbg.png';
 import prescriptionSampleImg from './assets/images/prescriptionsample.png';
@@ -90,6 +91,7 @@ export default function HomePage() {
                     <span className="skill">CSS</span>
                     <span className="skill">HTML</span>
                     <span className="skill">Bootstrap</span>
+                    <span className="skill">EmailJS</span>
                   </div>
                   <p>test description ijodsfijbfoapkjnfds</p>
                 </div>
@@ -156,6 +158,8 @@ export default function HomePage() {
           </div>
         </div>
       </AnimatedSection>
+
+      <ContactForm />
     </div>
   );
 }

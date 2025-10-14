@@ -60,6 +60,23 @@ export default function Nav() {
     }
   }
 
+  function goToContact(e) {
+    e.preventDefault();
+    setActive(false);
+    
+    if (location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: 'contactsec' } });
+    } else {
+      const contactSec = document.getElementById('contactsec');
+      if (contactSec) {
+        contactSec.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  }
+
   return (
     <nav className="nav">
       <div className="topmenu">
@@ -78,7 +95,7 @@ export default function Nav() {
             <a href="#aboutsec" className="tablink" onClick={goToAbout}>About Me</a>
           </li>
           <li className="contactbutton">
-            <a href="/" className="button">Contact Me</a>
+            <a href="#contactsec" className="button" onClick={goToContact}>Contact Me</a>
           </li>
         </ul>
 
