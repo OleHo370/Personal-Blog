@@ -27,6 +27,10 @@ export default function HomePage() {
     navigate('/drum-robot');
   };
 
+   const handleBlogClick = () => {
+    navigate('/blog-website');
+  };
+
 
   useEffect(() => {
     if (location.state?.scrollTo) {
@@ -81,7 +85,7 @@ export default function HomePage() {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection className="projectbox" delay={0.2}>
+              <AnimatedSection className="projectbox" onClick={handleBlogClick} delay={0.2}>
                 <BlockyGradient />
                 <div className="projecttext">
                   <h3>Olé's Blog</h3>
@@ -93,7 +97,7 @@ export default function HomePage() {
                     <span className="skill">Bootstrap</span>
                     <span className="skill">EmailJS</span>
                   </div>
-                  <p>test description ijodsfijbfoapkjnfds</p>
+                  <p>A portfolio website that showcases my projects in a detailed blog format, with photos and videos.</p>
                 </div>
                 <div className="projectimage">
                   <img src={oleBlogSampleImg}/>
