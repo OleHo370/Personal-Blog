@@ -1,6 +1,7 @@
 import './ProjectPage.css';
 import { useEffect } from 'react';
 import { AnimatedSection } from './AnimatedSection';
+import ProjectLink from './ProjectLink';
 
 export default function MazeRobotPage() {
   useEffect(function scrollToTop() {
@@ -15,6 +16,7 @@ export default function MazeRobotPage() {
         <AnimatedSection className="hccontentbox" delay={0.2}>
           <h2>Project Summary</h2>
           <p>I built an autonomous robot that is capable of navigating mazes.</p>
+          <ProjectLink url='https://github.com/OleHo370/Maze-Solving-Robot' text='Project GitHub' />
           
           <h3>Software</h3>
           <ul>

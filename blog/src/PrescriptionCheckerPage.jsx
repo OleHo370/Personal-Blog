@@ -20,6 +20,8 @@ import watchHomeImg from './assets/images/watchhome.png';
 import watchListImg from './assets/images/watchlist.png';
 import watchList2Img from './assets/images/watchlist2.png';
 import { AnimatedSection } from './AnimatedSection';
+import ProjectLink from './ProjectLink';
+
 
 export default function PrescriptionCheckerPage() {
   useEffect(function scrollToTop() {
@@ -34,7 +36,9 @@ export default function PrescriptionCheckerPage() {
         <AnimatedSection className="hccontentbox" delay={0.2}>
           <h2>Project Summary</h2>
           <p>I developed a multi-platform healthcare management application that bridges the communication gap between heart patients and their doctors.</p>
-          
+          <ProjectLink url='https://github.com/OleHo370/heart-checker-web' text='Website GitHub' />
+          <ProjectLink url='https://github.com/OleHo370/Heart-Condition-App' text='Swift App GitHub' />
+
           <h3>Frontend Development</h3>
           <ul>
             <li>Built responsive web interfaces using JavaScript, HTML, CSS, and Bootstrap featuring:

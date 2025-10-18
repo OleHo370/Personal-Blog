@@ -1,6 +1,7 @@
 import './ProjectPage.css';
 import { useEffect } from 'react';
 import { AnimatedSection } from './AnimatedSection';
+import ProjectLink from './ProjectLink';
 
 export default function OlesBlogPage() {
   useEffect(function scrollToTop() {
@@ -15,7 +16,8 @@ export default function OlesBlogPage() {
         <AnimatedSection className="hccontentbox" delay={0.2}>
           <h2>Project Summary</h2>
           <p>I developed a portfolio website with smooth animations, photos, videos, and links to showcase my projects and blogs.</p>
-          
+          <ProjectLink url='https://github.com/OleHo370/Personal-Blog' text='Project GitHub' />
+
           <h3>Frontend Development</h3>
           <ul>
             <li>Designed and styled multiple full pages with HTML and CSS, including a home page with a Contact Me form and individual project blog pages with photos and videos</li>

@@ -1,6 +1,7 @@
 import './ProjectPage.css';
 import { useEffect } from 'react';
 import { AnimatedSection } from './AnimatedSection';
+import ProjectLink from './ProjectLink';
 
 export default function DrumRobotPage() {
   useEffect(function scrollToTop() {
